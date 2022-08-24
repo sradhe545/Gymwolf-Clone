@@ -1,0 +1,16 @@
+.image{
+    width:300px;
+    display: flex;
+    margin: auto;
+}
+.box{
+    width: 35%;
+    margin: auto;
+    border:solid 1px red;
+    padding: 80px 40px 80px 40px;
+    margin-bottom: 50px;
+}
+.down{
+    display: flex;
+    justify-content: space-between;
+}
