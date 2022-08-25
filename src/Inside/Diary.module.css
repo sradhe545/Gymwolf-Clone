@@ -1,0 +1,11 @@
+.icon{
+    display: flex;
+    width: 120px;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon:hover{
+    background-color:lightgray;
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+}

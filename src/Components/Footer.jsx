@@ -1,6 +1,6 @@
 import React from 'react'
 import {SiYoutube,SiTwitter,SiInstagram,SiFacebook} from 'react-icons/si'
-import styles from './Footer.module.css'
+import styles from '../CSS/Footer.module.css'
 const Footer = () => {
   return (
     <div  className={styles.wh}>

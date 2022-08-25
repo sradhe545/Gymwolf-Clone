@@ -7,6 +7,8 @@ import Home from '../Components/Home';
 import Login from '../Components/Login';
 import Products from '../Components/Products';
 import Support from '../Components/Support';
+import Diary from '../Inside/Diary';
+
 
 const AllRoutes = () => {
   return (
@@ -20,6 +22,7 @@ const AllRoutes = () => {
             <Route path="/forums" element={<Forums/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/diary" element={<Diary/>}/>
 
         </Routes>
     </div>

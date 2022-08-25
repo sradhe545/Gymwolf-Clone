@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input,ButtonGroup,Button, Box} from '@chakra-ui/react'
-import styles from "./Login.module.css"
+import styles from "../CSS/Login.module.css"
 import Footer from './Footer'
 import { Link } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -16,7 +16,7 @@ const Login = () => {
       
         <Input placeholder='Enter Password' />
         <ButtonGroup variant='outline' spacing='6'>
-            <Button colorScheme='blue'>Submit</Button>
+           <Button colorScheme='blue'> <Link to="/diary">Submit</Link></Button>
         </ButtonGroup>
         </Box>
         <div className={styles.down}>
