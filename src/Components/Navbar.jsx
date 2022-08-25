@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink ,Link} from 'react-router-dom'
 import { DropdownButton,Dropdown } from 'react-bootstrap';
-import styles from "./Navbar.module.css"
+import styles from "../CSS/Navbar.module.css"
 const Navbar = () => {
   
   return (
@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles.right}>
-        <NavLink to="/products"> <DropdownButton  id="dropdown-item-button" title="Products">
+        <NavLink to="/products"> <DropdownButton style={{backgroundColor:"grey"}} id="dropdown-item-button" title="Products">
            <Dropdown.ItemText>Dropdown item text</Dropdown.ItemText>
            <Dropdown.Item as="button">Action</Dropdown.Item>
            <Dropdown.Item as="button">Another action</Dropdown.Item>

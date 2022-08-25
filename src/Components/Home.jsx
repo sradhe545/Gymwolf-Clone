@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Footer from './Footer'
-import styles from "./Home.module.css"
+import styles from "../CSS/Home.module.css"
 
 const Home = () => {
   return (
