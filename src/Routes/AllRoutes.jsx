@@ -6,6 +6,7 @@ import Forums from '../Components/Forums';
 import Home from '../Components/Home';
 import Login from '../Components/Login';
 import Products from '../Components/Products';
+import SignUp from '../Components/SignUp';
 import Support from '../Components/Support';
 import Diary from '../Inside/Diary';
 
@@ -23,6 +24,8 @@ const AllRoutes = () => {
             <Route path="/about" element={<About/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/diary" element={<Diary/>}/>
+            <Route path="/signup" element={<SignUp/>}/>
+
 
         </Routes>
     </div>
