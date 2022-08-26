@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from '../CSS/Blog.module.css'
 import { FaSearch } from 'react-icons/fa';
+import  Navbar  from './Navbar'
+
 
 const Blog = () => {
   return (
+    
     <div>
+      <Navbar/>
        <div className={styles.blogd}>
           <div className={styles.rowb}>
                  <h2> The Cronometer Blog</h2>

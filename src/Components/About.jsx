@@ -1,10 +1,12 @@
 import React from 'react'
+import  Navbar  from './Navbar'
+
 import styles from "../CSS/About.module.css"
 
 const About = () => {
   return (
     <div>
-      
+      <Navbar/>
          <hr  style={{marginTop:"80px",border:"0.1px solid  rgb(163, 174, 183)" , width:"80%",justifyContent:"center",marginLeft:"150px"}}/>
     <div className={styles.about}>
        <div className={styles.subabout}>
