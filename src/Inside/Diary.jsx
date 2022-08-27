@@ -7,11 +7,13 @@ import { Context } from '../Context/ContextProvider';
 import {AiFillDelete} from "react-icons/ai"
 import styles from "./Diary.module.css"
 const Diary = () => {
-  const {cart,getCart,handlePatch}=useContext(Context)
+  const {cart,getCart,handlePatch,p}=useContext(Context)
+  console.log("p",p)
     const  handleRemove= async(id)=>{
     await axios.delete(`https://warm-sea-77698.herokuapp.com/diary_exercise/${id}`).then(()=>getCart())
   }
   return (
+    <>
     <div style={{display: 'flex'}}>  
       {/* <img style={{width:"200px", marginTop:"-150px",marginRight:"-100px",marginLeft:"50px"}} src="https://cdn1.cronometer.com/2021/landing/cronometer-logo.svg" alt="log"/>   */}
         <div class="container">
@@ -24,7 +26,7 @@ const Diary = () => {
   <button className={styles.dropbtn}>V</button>
   <div className={styles.dropdowncontent}>
     <div style={{display:"flex",justifyContent: "space-between"}}>
-      <h3>Email :id</h3>
+      <h3>Email :{p}</h3>
       <button>Logout</button>
     </div>
 
@@ -71,7 +73,7 @@ const Diary = () => {
                             {" "}
                             <tr key={el.id}>
                               <td>{el.name}</td>
-                              <td ><button onClick={()=>handlePatch(el.id,+1,el.energy,el.quantity,el.updated_energy)} style={{border:"none",cursor:"pointer",backgroundColor:"white"}}>+</button><button style={{border:"none",backgroundColor:"white"}}>{el.quantity}</button><button onClick={()=>handlePatch(el.id,-1,el.energy,el.quantity,el.updated_energy)} style={{border:"none",cursor:"pointer",backgroundColor:"white"}}>-</button></td>
+                              <td ><button onClick={()=>handlePatch(el.id,+1,el.energy,el.quantity,el.updated_energy)} style={{border:"none",cursor:"pointer",backgroundColor:"white"}}>+</button><button style={{border:"none",backgroundColor:"white"}}>{el.quantity}</button><button onClick={()=>handlePatch(el.id,-1,el.energy,el.quantity,el.updated_energy)} style={{border:"none",cursor:"pointer",backgroundColor:"white"}} disabled={el.quantity===1}>-</button></td>
 
                               <td>{el.updated_energy.toFixed([3])} kCal</td>
                               <td onClick={()=>handleRemove(el.id)}><AiFillDelete style={{cursor:"pointer"}}/></td>
@@ -116,6 +118,14 @@ const Diary = () => {
 
     
   </div>
+
+  <div>
+  <img style={{height:"450px"}}src="https://i.ibb.co/xF45vLt/Screenshot-914.png" alt="Screenshot-914" border="0"/>
+  <img  style={{height:"550px"}} src="https://i.ibb.co/6tRGfNn/Screenshot-916.png" alt="Screenshot-916" border="0"/>
+  </div>
+  </>
+
+  
   )
 }
 

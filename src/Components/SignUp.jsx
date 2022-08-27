@@ -2,7 +2,9 @@ import React, { useContext } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../Context/ContextProvider'
-
+import { ChakraProvider } from '@chakra-ui/react'
+import { Input} from '@chakra-ui/react'
+import styles from '../CSS/Signup.module.css'
 
 
 const SignUp = () => {
@@ -22,49 +24,49 @@ const SignUp = () => {
  
 
          <form style={{textAlign:"center"}} onSubmit={onSubmit}>
-      <div style={{ boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}>
-        <img src='https://cdn1.cronometer.com/logos/cronometer-logo-orange.png' />
-      </div>
-      <div style={{ padding: 30 }}>
-        <h1 style={{ fontWeight: 'bold', fontSize: 20 }}>
-          Create Your Free Account
-        </h1>
-      </div>
-    
-        <input required  type='email' placeholder='Email Address' name="email" autoComplete='on' value={form.email} onChange={handleChange}/>
-        <br />
-        <input required type='password' placeholder='Password' name="password" value={form.password} onChange={handleChange}/>
-        <br />
-        {/* <input type='password' placeholder='Confirm Password' /> */}
-        <br />
-      
-    
+            <div style={{ marginTop :"-25px",boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',paddingBottom:"20px",paddingTop:"20px" }}>
+               <img style={{width:"300px"}} src='https://cdn1.cronometer.com/logos/cronometer-logo-orange.png' />
+          </div>
+          <div style={{ padding: 30 }}>
+          <h3 style={{ fontWeight:"bold"}}>Create Your Free Account</h3>
+          </div>
+<ChakraProvider>
+          <div className={styles.input1}>
+          <Input required  type='email' placeholder='Email Address' name="email" autoComplete='on' value={form.email} onChange={handleChange}/>
+          <br />
+          <Input  style={{marginTop:"40px"}} required type='password' placeholder='Password' name="password" value={form.password} onChange={handleChange}/>
+          <br />
+               {/* <input type='password' placeholder='Confirm Password' /> */}
+          <br />
+     </div>
+     </ChakraProvider>
+     <div className={styles.term}>
         <h1 style={{ fontWeight: 'bold', fontSize: 20 }}>Your Body Type</h1>
         <div>
-          <label>
-            <p>Sex:</p>
-            <input  type='radio' value='Female'  name="Male"  /> <label>Male</label>
-            <input   type='radio' value='Male' name="Female"  /> <label>Female</label>
-          </label>
-          <label>
-            <label>Born:</label><input required type='date' name="dob"  />
-          </label>
-          <label>
-            <label>Height:</label><input required type='text' name="height"  />
-          </label>
-          <label>
-            <label>Weight:</label><input required type='text' name="weight"  />
-          </label>
+          <div style={{display:"flex",margin :"auto",width:"170px" ,justifyContent:"space-between"}}>
+        <h6>Sex:</h6>
+        <div> <input type="radio" name="gender" value="male"/> Male
+        <input type="radio" name="gender" value="female"/> Female<br/></div>
+         
+        </div>
+        <br/>
+            <label>Born:</label><input style={{marginLeft:"20px"}} required type='date' name="dob"  />          
+        <br/>   
+            <label>Height:</label><input required style={{backgroundColor:"lightgrey",marginLeft:"20px"}} type='text' name="height"  placeholder='Enter Your Height'/>
+        <br/>  
+            <label>Weight:</label><input required style={{backgroundColor:"lightgrey",marginLeft:"20px"}} type='text' name="weight" placeholder='Enter Your Weight' /> 
         </div>
       
-    
-        <div>
+    </div>
+
+
+        <div className={styles.term1}>
           <h1  style={{ fontWeight: 'bold', fontSize: 20 }}>
             Terms of Service & Privacy Settings
           </h1>
          
-            <input type='checkbox' value='Female'></input>{' '}
-            <label> Check All </label> <br />
+            {/* <input type='checkbox' value='Female'></input>{' '}
+            <label> Check All </label> <br /> */}
             <p>
               By checking the box below you are indicating you have read and
               agree to our Terms of Service and Privacy Policy.
@@ -82,13 +84,7 @@ const SignUp = () => {
               {' '}
               I agree to receive newsletters and promotional materials.{' '}
             </label>
-            <br />
-            <input type='checkbox' value='Female'></input>{' '}
-            <label>
-              {' '}
-              I agree to receive personalized in-app ads. (You will receive less
-              relevant, non-personalized ads if you opt out){' '}
-            </label>
+            
         
 
         </div>
@@ -98,18 +94,13 @@ const SignUp = () => {
         <div>
          
             {/* <Link to='/login'> */}
-               <button type="submit">Create Account</button>
+               <button className={styles.term2} type="submit">Create Account</button>
             {/* </Link> */}
           
         </div>
     
       <br />
-      <div>
-        <p>Need help?</p>
-        <a href='' style={{ color: 'coral' }}>
-          Email Support
-        </a>
-      </div>
+      
     </form>
     
 

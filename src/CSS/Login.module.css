@@ -6,9 +6,10 @@
 .box{
     width: 35%;
     margin: auto;
-    border:solid 1px red;
-    padding: 80px 40px 80px 40px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 80px 60px 80px 60px;
     margin-bottom: 50px;
+    margin-top: 80px;;
 }
 .down{
     display: flex;

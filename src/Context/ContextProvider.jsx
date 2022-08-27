@@ -7,6 +7,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 export const Context=createContext()
 
 const ContextProvider = ({children}) => {
+  var p;
     const [data, setData] = useState([]);
     const [cart,setCart] = useState([]);
     const [sign,setSign] = useState([]);
@@ -32,6 +33,7 @@ const ContextProvider = ({children}) => {
     const handleAdd=(el,qty)=>{
             console.log(el.quantity,qty)
        axios.post("https://warm-sea-77698.herokuapp.com/diary_exercise",el).then(()=>getCart());
+       alert("Fruit Added Successfully!!")
         
      }
      useEffect(()=>{
@@ -54,7 +56,7 @@ const ContextProvider = ({children}) => {
           alert("Already Exists!!")
        }
        else{
-        axios.post("https://warm-sea-77698.herokuapp.com/trends",el);
+        axios.post("https://warm-sea-77698.herokuapp.com/trends",el).then((res)=>getSignUpData());
         navigate("/login")
        }
        
@@ -66,17 +68,36 @@ const ContextProvider = ({children}) => {
       //  console.log(res.data)
       setSign(res.data)        
         }
+
+        const handleLogin=(el)=>{
+          const user=sign.find((elem)=>
+          el.email===elem.email && el.password===elem.password
+        )
+        // console.log(user)
+        if(user===undefined)
+        {
+           alert("Wrong Credentials!!")
+        }
+        else{
+          console.log(user)
+        // p=user
+         navigate("/diary")
+        
+
+         }
+        }
+// console.log("user",p)
+// const x=handleLogin()
+// console.log("p",p)
 useEffect(()=>{
   getSignUpData()
 },[])
-
   return (
     <div>
-<Context.Provider value={{handleAdd,data,cart,getCart,handlePatch,handleSignUp}}>
+<Context.Provider value={{handleAdd,data,cart,getCart,handlePatch,handleSignUp,handleLogin,p}}>
     {children}
 </Context.Provider>
     </div>
   )
 }
-
 export default ContextProvider
