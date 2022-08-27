@@ -46,7 +46,7 @@ const [qty,setQty]=useState(1)
                           <>
                             {" "}
                             <tr onClick={()=>setFruit(el)}>
-                              <td>{el.name}</td>
+                              <td style={{cursor:"pointer"}} >{el.name}</td>
                               <td>{el.energy} kCal</td>
                             </tr>
                           </>

@@ -21,7 +21,7 @@ const Navbar = () => {
        </DropdownButton></NavLink>
         <NavLink className={styles.nav} to="/support">Support</NavLink>
         <NavLink className={styles.nav} to="/blog">Blog</NavLink>
-        <NavLink className={styles.nav} to="/forums">Forums</NavLink>
+        {/* <NavLink className={styles.nav} to="/forums">Forums</NavLink> */}
         <NavLink className={styles.nav} to="/about">About</NavLink>
         <NavLink className={styles.nav} to="/login"><button className={styles.login}>Login</button></NavLink>
 
